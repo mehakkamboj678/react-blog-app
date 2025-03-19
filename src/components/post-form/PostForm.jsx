@@ -76,7 +76,7 @@ function PostForm({post}) {
     
                 // Create a new post
                 dbPost = await service.createPost({
-                    $id: post?.$id || ID.unique(),
+                    
                     ...data,
                     featuredImage: file.$id,
                     userId: userData.$id
