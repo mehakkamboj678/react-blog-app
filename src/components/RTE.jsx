@@ -2,7 +2,7 @@ import React from 'react'
 import {Editor} from '@tinymce/tinymce-react'
 import { Controller } from 'react-hook-form'
 import confg from '../confg/confg'
-
+console.log("TinyMCE API Key in Vercel:", confg.appwriteApiKey);
 // RTE means rich text editor
 function RTE({label,name,control,defaultValue=''}) {
   return (
