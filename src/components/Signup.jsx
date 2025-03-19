@@ -13,21 +13,33 @@ function Signup() {
     const {register,handleSubmit}=useForm()
    const [error,setError]=useState("")
 
-    const signup=async(data)=>{
-        setError("")
-        try {
-            const user=await authService.createAcc(data)
-            if(user){
-                const userData= await authService.getCurrentUser()
-                if(userData){
-                    dispatch(login(userData))
-                    navigate("/")
-                }
+   const signup = async (data) => {
+    setError("");
+    try {
+        // Step 1: Create User Account
+        const user = await authService.createAcc(data);
+
+        if (user) {
+            console.log("Signup successful:", user);
+
+            // Step 2: Force-Refresh Redux State with User Data
+            const userData = await authService.getCurrentUser(); // Fetch updated user details
+            
+            if (userData) {
+                console.log("User Data after Signup:", userData);
+                
+                dispatch(login(userData)); // ✅ Update Redux State
+                
+                // ✅ Force a Page Reload to Ensure Redux Updates
+                window.location.reload();
             }
-        } catch (error) {
-            setError(error.message)
         }
+    } catch (error) {
+        setError(error.message);
     }
+};
+
+
   return (
     <div className="flex items-center justify-center">
      <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
