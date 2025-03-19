@@ -31,7 +31,7 @@ Normally, register from React Hook Form works with basic inputs like <input> or 
       render={({field : {onChange}})=>(
         <Editor 
         initialValue={defaultValue}
-        apiKey={confg.appwriteApiKey}
+        apiKey="xy88b81cue5aab6t1v675xq04f1qe9fmo40kmxqafo3dg1nq"
         init={
             { 
                branding:false,
