@@ -140,7 +140,7 @@ export class Service{
 // 📌 This fileId is stored in the database and used later to fetch/display the image.
 // 
 
-    getFilePreview(fileId){
+    getFileView(fileId){
         return this.bucket.getFilePreview(confg.appwriteBucketId,fileId)
     }
     // The getFilePreview(fileId) method of Appwrite returns a URL that points to a preview version of the file stored in Appwrite's storage.
