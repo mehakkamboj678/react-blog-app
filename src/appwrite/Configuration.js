@@ -141,7 +141,7 @@ export class Service{
 // 
 
     getFileView(fileId){
-        return this.bucket.getFilePreview(confg.appwriteBucketId,fileId)
+        return this.bucket.getFileView(confg.appwriteBucketId,fileId)
     }
     // The getFilePreview(fileId) method of Appwrite returns a URL that points to a preview version of the file stored in Appwrite's storage.
     // Yes! In your code, featuredImage is actually the fileId of the uploaded image.
